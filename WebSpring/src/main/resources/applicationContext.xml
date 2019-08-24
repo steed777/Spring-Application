@@ -6,9 +6,12 @@
  http://www.springframework.org/schema/beans/spring-beans.xsd
  http://www.springframework.org/schema/context
  http://www.springframework.org/schema/context/spring-context.xsd">
-
+<!-- все изменения происходят только в этом файле, а не в джава коде -->
  <bean id="musicBean" 
         class="ru.senko.springcourse.ClasicalMusic">
  </bean>
-
+<bean id="musicPlayer"
+class="ru.senko.springcourse.MusicPlayer">
+<constructor-arg ref="musicBean"/>
+ </bean>
 </beans>

@@ -8,10 +8,12 @@ public static void main(String[] args) {
 	ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext(
 		"applicationContext.xml");
 	
-          Muzic muzic = context.getBean("musicBean", Muzic.class);
-		  MusicPlayer musicPlayer = new MusicPlayer(muzic);
+         // Muzic muzic = context.getBean("musicBean", Muzic.class);
+		//  MusicPlayer musicPlayer = new MusicPlayer(muzic);
+	
+	MusicPlayer musicPlayer = context.getBean("musicPlayer", MusicPlayer.class);
 		  musicPlayer.playMusic();
 		  
-		   context.close();
+		  context.close();
 }
 }
