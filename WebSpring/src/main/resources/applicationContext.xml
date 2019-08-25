@@ -6,12 +6,21 @@
  http://www.springframework.org/schema/beans/spring-beans.xsd
  http://www.springframework.org/schema/context
  http://www.springframework.org/schema/context/spring-context.xsd">
+ 
 <!-- все изменения происходят только в этом файле, а не в джава коде -->
+
+<context:property-placeholder location="classpath:musicPlayer.properties"/>
+
  <bean id="musicBean" 
         class="ru.senko.springcourse.ClasicalMusic">
  </bean>
+ 
 <bean id="musicPlayer"
 class="ru.senko.springcourse.MusicPlayer">
-<constructor-arg ref="musicBean"/>
+<property name="muzic" ref="musicBean"/>
+
+<property name="name" value="${musicPlayer.name}"/>
+<property name="valume" value="${musicPlayer.valume}"/>
  </bean>
+ <!-- внедрение зависимости просходит с помощью сеттора -->
 </beans>
