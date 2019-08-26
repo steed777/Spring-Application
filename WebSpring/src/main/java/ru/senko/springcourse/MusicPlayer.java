@@ -1,24 +1,19 @@
 package ru.senko.springcourse;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class MusicPlayer {
-private Muzic muzic;
+private List<Muzic>muzics = new ArrayList<Muzic>();
 private String name;
 private int valume;
 
-//IoC patern внедряем зависимость
-public MusicPlayer(Muzic muzic) {
-	
-	this.muzic = muzic;
-}
-public MusicPlayer() {
-	// TODO Auto-generated constructor stub
-}
-public void setMuzic(Muzic muzic) {
-	this.muzic = muzic;
-}
+
 public void playMusic() {
+for (Muzic muzic : muzics) {
 	System.out.println("Plaing: " + muzic.getSong());
-}
+	}
+	}
 public int getValume() {
 	return valume;
 }
@@ -30,5 +25,10 @@ public String getName() {
 }
 public void setName(String name) {
 	this.name = name;
+}
+
+
+public void setMuzics(List<Muzic> muzics) {
+	this.muzics = muzics;
 }
 }

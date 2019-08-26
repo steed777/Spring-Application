@@ -13,8 +13,8 @@ public static void main(String[] args) {
 	
 	MusicPlayer musicPlayer = context.getBean("musicPlayer", MusicPlayer.class);
 		  musicPlayer.playMusic();
-		  System.out.println(musicPlayer.getName());
-		  System.out.println(musicPlayer.getValume());
+		  //System.out.println(musicPlayer.getName());
+		 // System.out.println(musicPlayer.getValume());
 		  context.close();
 }
 }

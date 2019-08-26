@@ -7,20 +7,33 @@
  http://www.springframework.org/schema/context
  http://www.springframework.org/schema/context/spring-context.xsd">
  
-<!-- все изменения происходят только в этом файле, а не в джава коде -->
+<!-- все изменения происходят только в этом файле, а не в джава коде 
 
 <context:property-placeholder location="classpath:musicPlayer.properties"/>
-
+-->
  <bean id="musicBean" 
         class="ru.senko.springcourse.ClasicalMusic">
  </bean>
  
+ <bean id="musicBean2" 
+        class="ru.senko.springcourse.RockMusic">
+ </bean>
+ 
+ <bean id="musicBean3" 
+        class="ru.senko.springcourse.MetalMusic">
+ </bean>
+ 
 <bean id="musicPlayer"
 class="ru.senko.springcourse.MusicPlayer">
-<property name="muzic" ref="musicBean"/>
+<property name="muzics">
 
-<property name="name" value="${musicPlayer.name}"/>
-<property name="valume" value="${musicPlayer.valume}"/>
+<list>
+<ref bean="musicBean"/>
+<ref bean="musicBean2"/>
+<ref bean="musicBean3"/>
+</list>
+
+</property>
  </bean>
- <!-- внедрение зависимости просходит с помощью сеттора -->
+ 
 </beans>
