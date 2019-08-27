@@ -4,15 +4,16 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class MusicPlayer {
-private List<Muzic>muzics = new ArrayList<Muzic>();
+//private List<Muzic>muzics = new ArrayList<Muzic>();
+	private Muzic muzic;
 private String name;
 private int valume;
-
-
+public MusicPlayer(Muzic muzic) {
+	// TODO Auto-generated constructor stub
+	this.muzic = muzic;
+}
 public void playMusic() {
-for (Muzic muzic : muzics) {
-	System.out.println("Plaing: " + muzic.getSong());
-	}
+System.out.println("Plaing: " + muzic.getSong());
 	}
 public int getValume() {
 	return valume;
@@ -26,7 +27,7 @@ public String getName() {
 public void setName(String name) {
 	this.name = name;
 }
-public void setMuzics(List<Muzic> muzics) {
-	this.muzics = muzics;
-}
+	/*
+	 * public void setMuzics(List<Muzic> muzics) { this.muzics = muzics; }
+	 */
 }

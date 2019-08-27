@@ -11,9 +11,17 @@ public static void main(String[] args) {
          // Muzic muzic = context.getBean("musicBean", Muzic.class);
 		//  MusicPlayer musicPlayer = new MusicPlayer(muzic);
 	
-	MusicPlayer musicPlayer = context.getBean("musicPlayer", MusicPlayer.class);
-		  musicPlayer.playMusic();
+	Muzic muzic = context.getBean("rockMusic", Muzic.class);
+	MusicPlayer rockMusic = new MusicPlayer(muzic);
+	rockMusic.playMusic();
 		  
+		  Muzic muzic2 = context.getBean("clasicalMusic", Muzic.class);
+			MusicPlayer  clasicalMusic = new MusicPlayer(muzic);
+				  clasicalMusic.playMusic();
+				  
+				  Muzic muzic3 = context.getBean("metalMusic", Muzic.class);
+					MusicPlayer metalMusic = new MusicPlayer(muzic);
+					metalMusic.playMusic();
 		  context.close();
 }
 }
