@@ -1,7 +1,6 @@
 package ru.senko.springcourse;
 
-import org.springframework.stereotype.Component;
-@Component
+
 public class RockMusic implements Muzic{
 	
 public String getSong() {
